@@ -1,0 +1,42 @@
+// BASE COLORS
+// Normal Colors
+$red: #ff0033;
+$orange: #ff6633;
+$yellow: #ffff33;
+$green: #00cc00;
+$blue: #0000ff;
+$purple: #990099;
+$pink: #ff33cc;
+$white: #fcfcfc;
+$black: #222222;
+
+// Light Colors
+$light-yellow: #ffff99;
+$light-green: #66ff66;
+$light-blue: #66ffff;
+$light-purple: #ff00ff;
+$light-pink: #ff66ff;
+
+// Dark Colors
+$dark-red: #990000;
+$dark-green: #003300;
+$dark-blue: #000099;
+$dark-purple: #660099;
+
+
+// TYPE COLORS
+$error: $red;
+$warning: $orange;
+$success: $green;
+$info: $yellow;
+
+
+// THEME
+// Defaults
+$primary: $blue;
+$secondary: $green;
+
+// Class setting
+body.primary-red {
+    $primary: $red !global;
+}
