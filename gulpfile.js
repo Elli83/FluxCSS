@@ -3,7 +3,7 @@ const sass = require('gulp-sass')(require('sass'))
 
 function buildStyles() {
     return src('flux/**/*.scss')
-        .pipe(sass())
+        .pipe(sass({ outputStyle: "compressed" }))
         .pipe(dest('css'))
 }
 
