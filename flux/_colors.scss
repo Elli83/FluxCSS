@@ -5,24 +5,26 @@
     .col-hover-#{$key}{ &:hover{ color: $val; }}
     .bg-hover-#{$key}{ &:hover{ background-color: $val; }}
 
-    
     @if ($key != "black" and $key != "white"){
-        // Light Variations
-        @for $i from 1 through 9 {
-            .col-#{$key}-light-#{$i} { color: mix(white, $val, $i * 10); }
-            .bg-#{$key}-light-#{$i} { background-color: mix(white, $val, $i * 10); }
-            
-            .col-hover-#{$key}-light-#{$i}{ &:hover{ color: mix(white, $val, $i * 10); }}
-            .bg-hover-#{$key}-light-#{$i}{ &:hover{ background-color: mix(white, $val, $i * 10); }}
+        .col-#{$key}-5 { color: $val; }
+        .bg-#{$key}-5 { background-color: $val; }
+        .col-hover-#{$key}-5 { &:hover{ color: $val; }}
+        .bg-hover-#{$key}-5 { &:hover{ background-color: $val; }}
+
+        // DARK
+        @for $i from 1 through 4 {
+            .col-#{$key}-#{$i} { color: mix(black, $val, 100 - ($i*20)); }
+            .bg-#{$key}-#{$i} { background-color: mix(black, $val, 100 - ($i*20)); }
+            .col-hover-#{$key}-#{$i} { &:hover{ color: mix(black, $val, 100 - ($i*20)); }}
+            .bg-hover-#{$key}-#{$i} { &:hover{ background-color: mix(black, $val, 100 - ($i*20)); }}
         }
 
-        // Dark Variations
-        @for $i from 1 through 9 {
-            .col-#{$key}-dark-#{$i} { color: mix(black, $val, $i * 10); }
-            .bg-#{$key}-dark-#{$i} { background-color: mix(black, $val, $i * 10); }
-            
-            .col-hover-#{$key}-dark-#{$i}{ &:hover{ color: mix(black, $val, $i * 10); }}
-            .bg-hover-#{$key}-dark-#{$i}{ &:hover{ background-color: mix(black, $val, $i * 10); }}
+        // LIGHT
+        @for $i from 6 through 9 {
+            .col-#{$key}-#{$i} { color: mix(white, $val, ($i - 5) * 20); }
+            .bg-#{$key}-#{$i} { background-color: mix(white, $val, ($i - 5) * 20); }
+            .col-hover-#{$key}-#{$i} { &:hover{ color: mix(white, $val, ($i - 5) * 20); }}
+            .bg-hover-#{$key}-#{$i} { &:hover{ background-color: mix(white, $val, ($i - 5) * 20); }}
         }
     }
 }
