@@ -1,0 +1,6 @@
+@for $i from 1 through 100 {
+    .w-#{$i}{ width: percentage($i * 0.01); }
+    .w-#{$i}v{ width: #{$i}vw; }
+    .h-#{$i}{ height: percentage($i * 0.01); }
+    .h-#{$i}v{ height: #{$i}vw; }
+}
