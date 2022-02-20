@@ -1,0 +1,57 @@
+@use "sass:math";
+
+$grid-columns: 12;
+$grid-gaps: (
+    "0": 0,
+    "1": 10px,
+    "2": 20px,
+    "3": 30px,
+    "4": 40px,
+    "5": 50px
+);
+$justify-values: flex-start, flex-end, center, space-between, space-around;
+
+// BASE LAYOUT CLASSES
+.container {
+    width:100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.row{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+
+// JUSTIFY CLASSES
+@each $val in $justify-values {
+    .justify-#{$val} {
+        justify-content: $val;
+    }
+}
+
+
+// COLUMN CLASSES
+@mixin col($size) {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: math.div($size * 100%, $grid-columns);
+}
+
+@for $i from 1 through $grid-columns {
+    .col-#{$i} {
+        @include col($i);
+    }
+}
+
+@each $key, $val in $breakpoints{
+    @include breakpoint($val) {
+        @for $i from 1 through $grid-columns {
+            .col-#{$key}-#{$i} {
+                @include col($i);
+            }
+        }
+    }
+}
