@@ -3,8 +3,7 @@
 
 
 // COLOR MAP
-$colors: (
-    // Main
+$basecolors: (
     "red": #f03,
     "orange": #f63,
     "yellow": #ff3,
@@ -16,16 +15,14 @@ $colors: (
     "black": #222
 );
 
+$typecolors: (
+    "error": map-get($basecolors, "red"),
+    "warning": map-get($basecolors, "orange"),
+    "success": map-get($basecolors, "green"),
+    "info": map-get($basecolors, "yellow"),
+);
 
-.test-btn {
-    background-color: map-get($colors, "purple");
-}
-
-// TYPE COLORS
-$error: map-get($colors, "red");
-$warning: map-get($colors, "orange");
-$success: map-get($colors, "green");
-$info: map-get($colors, "yellow");
+$colors: map-merge($basecolors, $typecolors);
 
 // SPACING
 $base-padding: 0.75rem;
